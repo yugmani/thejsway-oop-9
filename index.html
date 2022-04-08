@@ -2,40 +2,45 @@
   <h1>Understand object-oriented programming</h1>
   <ul>
     <li>
-      Object-Oriented Programming, or OOP, is a programming paradigm that uses
-      objects containing both data and behavior to create programs.
+      <strong>Object-Oriented Programming</strong>, or <strong>OOP</strong>, is
+      a programming paradigm that uses objects containing both data and behavior
+      to create programs.
     </li>
     <li>
-      A class is an object-oriented abstraction for an idea or a concept
-      manipulated by a program. It offers a convenient syntax to create objects
-      representing this concept.
+      A <code><em>class</em></code> is an object-oriented abstraction for an
+      idea or a concept manipulated by a program. It offers a convenient syntax
+      to create objects representing this concept.
     </li>
     <li>
-      A JavaScript class is defined with the class keyword. It can only contain
-      methods. The constructor() method, called during object creation, is used
-      to initialize the object, often by giving it some data properties. Inside
-      methods, the this keyword represents the object on which the method was
-      called.
+      A JavaScript class is defined with the
+      <code><em>class</em></code> keyword. It can only contain
+      <strong>methods</strong>. The <code><em>constructor()</em></code> method,
+      called during object creation, is used to initialize the object, often by
+      giving it some data properties. Inside methods, the
+      <code><em>this</em></code> keyword represents the object on which the
+      method was called.
     </li>
     <li>
-      Objects are created from a class with the new operator. It calls the class
-      constructor to initialize the newly created object.
+      Objects are created from a class with the
+      <code><em>new</em></code> operator. It calls the class constructor to
+      initialize the newly created object.
     </li>
     <li>
-      JavaScript's OOP model is based on prototypes. Any JavaScript object has
-      an internal property which is a link (a reference) to another object: its
-      prototype. Prototypes are used to share properties and delegate behavior
-      between objects.
+      JavaScript's OOP model is based on <strong>prototypes</strong>. Any
+      JavaScript object has an internal property which is a link (a
+      <strong>reference</strong>) to another object: its prototype. Prototypes
+      are used to share properties and delegate behavior between objects.
     </li>
     <li>
       When trying to access a property that does not exist in an object,
-      JavaScript tries to find this property in the prototype chain of this
-      object by first searching its prototype, then its prototype's own
-      prototype, and so on.
+      JavaScript tries to find this property in the
+      <strong>prototype chain</strong> of this object by first searching its
+      prototype, then its prototype's own prototype, and so on.
     </li>
     <li>
       There are several ways to create and link JavaScript objects through
-      prototypes. One is to use the Object.create() method.
+      prototypes. One is to use the
+      <code><em>Object.create()</em></code> method.
       <p>
         <code
           >// Create an object linked to myPrototypeObject const myObject =
@@ -44,30 +49,46 @@
       </p>
     </li>
     <li>
-      The JavaScript class syntax is another, arguably more convenient way to
-      create relationships between objects.It emulates the class-based OOP model
-      found in languages like C++, Java or C#. It is, however, just syntactic
-      sugar on top of JavaScript's own prototype-based OOP model.
+      The JavaScript <code><em>class</em></code> syntax is another, arguably
+      more convenient way to create relationships between objects.It emulates
+      the class-based OOP model found in languages like C++, Java or C#. It is,
+      however, just <strong>syntactic sugar</strong> on top of JavaScript's own
+      prototype-based OOP model.
     </li>
   </ul>
   <h3>Under the hood: objects and prototypes</h3>
   <ul>
     <li>
-      To create relationships between objects, JavaScript uses prototypes.
+      To create relationships between objects, JavaScript uses <strong>prototypes</strong>.
     </li>
     <li>
       In addition to its own particular properties, any JavaScript object has an
       internal property which is a link (known as a reference) to another object
-      called its prototype.
+      called its <strong>prototype</strong>.
     </li>
     <li>
       When trying to access a property that does not exist in an object,
       JavaScript tries to find this property in the prototype of this object.
     </li>
     <li>
-      This type of relationship between JavaScript objects is called delegation:
+      This type of relationship between JavaScript objects is called
+      <mark>delegation</mark>
       an object delegates part of its operation to its prototype.
     </li>
+    <li>
+      JavaScript's object-oriented model is based on prototypes, not classes, to
+      share properties and delegate behavior between objects. In JavaScript, a
+      class is itself an object, not a static blueprint. "Instantiating" a class
+      creates a new object linked to a prototype object.
+    </li>
+    <li>
+      The JavaScript class syntax is merely a more convenient way to create
+      relationships between objects through prototypes. Classes were introduced
+      to emulate the class-based OOP model on top of JavaScript's own
+      prototype-based model. It's an example of what programmers call syntactic
+      sugar.
+    </li>
+    <li></li>
   </ul>
 
   <p>
