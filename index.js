@@ -218,21 +218,28 @@ class Account {
   credit() {
     this.balance += this.value;
     console.log(`$${this.value} is credited to ${this.name}'s account`);
-
   }
 
   describe() {
-   return console.log(`owner: ${this.name}, balance: ${this.balance}`);
-  }  
+    return console.log(`owner: ${this.name}, balance: ${this.balance}`);
+  }
 }
+
+let createAccounts = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    let varName = arr[i].toLowerCase();
+    varName = new Account(arr[i], 1000);
+    varName.credit();
+    varName.describe();
+  }
+};
 
 let accounts = ['Sean', 'Brad', 'Georges'];
-// const sean = new Account('Sean', 1000);
 
-sean.credit();
-sean.describe();
-
-for(let i=0; i<accounts.length; i++){
-  // let varName = accounts[i].toLowerCase();
-  new Account(accounts[i], 1000).credit();
-}
+createAccounts(accounts);
+// $1000 is credited to Sean's account
+// owner: Sean, balance: 1000
+// $1000 is credited to Brad's account
+// owner: Brad, balance: 1000
+// $1000 is credited to Georges's account
+// owner: Georges, balance: 1000
