@@ -10,11 +10,18 @@ class Character {
     this.health = health;
     this.strength = strength;
     this.xp = 0; //xp is always zero for new characters
+    //added for character inventory exercise
+    this.gold = 10;
+    this.key = 1;
   }
 
   //Return the character description
   describe() {
-    return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points`;
+    //preliminary exercise
+    // return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points`;
+
+    //for character inventory exercise
+    return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points, ${this.gold} gold and ${this.key} key(s)`;
   }
 
   // Attack a target
@@ -30,16 +37,20 @@ class Character {
       } else {
         target.health = 0;
         const bonusXP = 10;
+        const bonusGold = 10;
+        const bonusKey = 1;
         console.log(
           `${this.name} eliminated ${target.name} and wins ${bonusXP} experience points`
         );
         this.xp += bonusXP;
+        this.gold += bonusGold;
+        this.key += bonusKey;
       }
     } else {
       console.log(`{this.name} can't attack (they've been eliminated)`);
     }
     //Return the character description
-    return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points`;
+    return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points, ${this.gold} gold and ${this.key} key(s)`;
   }
 }
 
@@ -163,3 +174,65 @@ console.log(`${snowy.name} is a ${snowy.species} dog measuring ${snowy.size}`);
 //Snowy is a terrier dog measuring 22
 console.log(`Look, a cat! ${snowy.name} barks: ${snowy.bark()}`);
 // Look, a cat! Snowy barks: Woof! Woof!
+
+// Character inventory
+// ----------------------------------------------
+
+// Improve the example RPG to add character inventory management according to the following rules:
+
+// A character's inventory contains a number of gold and a number of keys.
+
+// Each character begins with 10 gold and 1 key.
+
+// The character description must show the inventory state.
+
+// When a character slays another character, the victim's inventory goes to its vanquisher.
+
+// ****** code is improved above ******
+
+//Output
+//Aurora has 130 health points, 35 as strength and 15 XP points, 10 gold and 1 key(s)
+// Glacius has 130 health points, 30 as strength and 0 XP points, 10 gold and 1 key(s)
+
+//Aurora has 110 health points, 35 as strength and 15 XP points, 10 gold and 1 key(s)
+//Glacius has 110 health points, 30 as strength and 10 XP points, 20 gold and 2 key(s)
+
+// Account list
+// -------------------------------------
+
+// Let's build upon a previous account object exercise. A bank account is still defined by:
+
+// A name property.
+// A balance property, initially set to 0.
+// A credit method adding the value passed as an argument to the account balance.
+// A describe method returning the account description.
+// Write a program that creates three accounts: one belonging to Sean, another to Brad and the third one to Georges. These accounts are stored in an array. Next, the program credits 1000 to each account and shows its description.
+
+class Account {
+  constructor(name, value) {
+    this.name = name;
+    this.value = value;
+    this.balance = 0; //intiatially set to 0
+  }
+
+  credit() {
+    this.balance += this.value;
+    console.log(`$${this.value} is credited to ${this.name}'s account`);
+
+  }
+
+  describe() {
+   return console.log(`owner: ${this.name}, balance: ${this.balance}`);
+  }  
+}
+
+let accounts = ['Sean', 'Brad', 'Georges'];
+// const sean = new Account('Sean', 1000);
+
+sean.credit();
+sean.describe();
+
+for(let i=0; i<accounts.length; i++){
+  // let varName = accounts[i].toLowerCase();
+  new Account(accounts[i], 1000).credit();
+}
